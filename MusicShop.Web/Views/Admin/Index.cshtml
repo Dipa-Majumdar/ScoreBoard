@@ -1,0 +1,178 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Music Shop</h1>
+</div>
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        html, body, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #CECECE;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        btn, btn:focus, btn:hover, .btn-primary:focus, .btn-primary.focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        textarea.form-control {
+            resize: none;
+            height: 150px;
+        }
+
+        .form-container {
+            height: 100vh;
+        }
+
+        .form-box {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 60px 30px 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px 7px rgba(0,0,0,0.12);
+            background-color: #FFFFFF;
+        }
+
+        .flex-dis {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .flex-align-centre{
+            justify-content: center;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .form-icon {
+            margin-right: 15px;
+        }
+
+            .form-icon img {
+                max-width: 100%;
+                width: 40px;
+            }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .btn-submit {
+            background-color: #7d7d7d;
+            border: 0;
+            padding: 7px 25px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+            .btn-submit:hover {
+                background-color: #999999;
+            }
+
+        .form-textarea {
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+            .form-textarea textarea {
+                position: relative;
+                z-index: 1;
+            }
+
+        .copy-icon {
+            position: absolute;
+            bottom: calc(0% + 10px);
+            right: 25px;
+            z-index: 2;
+            height: 35px;
+            width: 35px;
+            background-color: #CCCCCC;
+            border-radius: 50%;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .copy-icon:hover {
+                background-color: #BBBBBB;
+            }
+
+            .copy-icon img {
+                max-width: 100%;
+                width: 20px;
+            }
+    </style>
+</head>
+<body>
+    <div class="form-container flex-dis">
+        <div class="container">
+            <div class="form-box text-center">
+                <div class="row">
+                    @*<div class="col-md-12">
+                        <div class="form-group flex-dis text-center">
+                            <div class="flex-1"> <input class="form-control" placeholder="Github" /> </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group flex-dis text-center">
+                            <div class="flex-1"><input class="form-control" placeholder="Linkedin" disabled /></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group flex-dis  text-center">
+                            <div class="flex-1"><input class="form-control" placeholder="Stackoverflow" disabled /></div>
+                        </div>
+                    </div>*@
+
+                    <div class="col-12">
+                        <div class="flex-dis flex-align-centre">
+                            <form asp-action="Add"><button type="submit" class="btn btn-primary btn-submit">Add</button></form>
+                            <form asp-action="GetAll"><button type="submit" class="btn btn-primary btn-submit">View</button></form>
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function copyText() {
+            var textElem = document.querySelector("textarea");
+            textElem.select();
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>
